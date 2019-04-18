@@ -76,20 +76,13 @@ class WriterContext {
   }
 
   void writeKey() {
-    if (key.isEmpty()) {
-      return;
-    }
-
-    if (!empty) {
-      write('\n');
-    }
-
+    write('\n');
     write(currentTableIndent);
 
     if (isArrayOfTable) {
       write("[[").write(key).write("]]\n");
     } else {
-      write('[').write(key).write("]\n");
+      write("[").write(key).write("]\n");
     }
   }
 
